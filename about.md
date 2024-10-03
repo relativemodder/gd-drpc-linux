@@ -1,6 +1,6 @@
 # Discord Rich Presence IPC Bridge for Linux
 
-Shotout to this man: [https://github.com/0e4ef622/wine-discord-ipc-bridge](https://github.com/0e4ef622/wine-discord-ipc-bridge)
+Shoutout to this man: [https://github.com/0e4ef622/wine-discord-ipc-bridge](https://github.com/0e4ef622/wine-discord-ipc-bridge)
 
 This is a mod to work with the Linux Discord Rich Presence IPC Bridge.
 
