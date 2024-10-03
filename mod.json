@@ -1,0 +1,23 @@
+{
+	"geode": "3.8.1",
+	"gd": {
+		"win": "2.206"
+	},
+	"id": "relative.discord_rich_presence_linux_ipc_bridge",
+	"name": "Discord RPC for Linux",
+	"version": "v1.0.0",
+	"developer": "Relative",
+	"description": "",
+	"resources": {
+		"files": [
+			"src/winediscordipcbridge.exe"
+		]
+	},
+	"dependencies": [
+		{
+			"id": "techstudent10.discord_rich_presence",
+			"importance": "required",
+			"version": ">=2.12.2"
+		}
+	]
+}
