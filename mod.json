@@ -19,5 +19,8 @@
 			"importance": "required",
 			"version": ">=2.12.2"
 		}
-	]
+	],
+	"links": {
+		"source": "https://github.com/relativemodder/gd-drpc-linux"
+	}
 }
