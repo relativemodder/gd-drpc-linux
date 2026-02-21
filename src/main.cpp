@@ -24,7 +24,8 @@ enum ContainerType {
 };
 
 static ContainerType detect_container() {
-    if (getenv("container")) {
+    const char* container = getenv("container");
+    if (container && std::string(container) == "flatpak") {
         return FLATPAK;
     } else if (getenv("APPIMAGE")) {
         return APPIMAGE;
@@ -106,7 +107,8 @@ class $modify(DRPCLinux, MenuLayer) {
 		si.cb = sizeof(si);
 		ZeroMemory(&pi, sizeof(pi));
 
-		if (!CreateProcess(path.c_str(), NULL, NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi)) {
+		DWORD creationFlags = Mod::get()->getSettingValue<bool>("show-console") ? 0 : CREATE_NO_WINDOW;
+		if (!CreateProcess(path.c_str(), NULL, NULL, NULL, TRUE, creationFlags, NULL, NULL, &si, &pi)) {
 			Notification::create("Failed to create Discord IPC Bridge Process", NotificationIcon::Error)->show();
 			return true;
 		}

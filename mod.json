@@ -1,7 +1,7 @@
 {
-	"geode": "3.8.1",
+	"geode": "5.0.0-beta.3",
 	"gd": {
-		"win": "2.206"
+		"win": "2.2081"
 	},
 	"id": "relative.discord_rich_presence_linux_ipc_bridge",
 	"name": "Discord RPC for Linux",
@@ -13,14 +13,21 @@
 			"src/winediscordipcbridge.exe"
 		]
 	},
-	"dependencies": [
-		{
-			"id": "techstudent10.discord_rich_presence",
-			"importance": "required",
-			"version": ">=2.12.2"
+	"dependencies": {
+		"techstudent10.discord_rich_presence": {
+			"version": ">=4.0.0",
+			"required": true
 		}
-	],
+	},
 	"links": {
 		"source": "https://github.com/relativemodder/gd-drpc-linux"
+	},
+	"settings": {
+		"show-console": {
+			"type": "bool",
+			"default": false,
+			"name": "Show Console Window",
+			"description": "Show the IPC bridge console window (useful for debugging)"
+		}
 	}
 }

@@ -10,6 +10,11 @@ add_library(${PROJECT_NAME} SHARED
     src/main.cpp
 )
 
+# Add mingw-w64 include path for OpenGL/GLU headers (globally, so bindings can find them too)
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    include_directories(SYSTEM /usr/x86_64-w64-mingw32/include)
+endif()
+
 if (NOT DEFINED ENV{GEODE_SDK})
     message(FATAL_ERROR "Unable to find Geode SDK! Please define GEODE_SDK environment variable to point to Geode")
 else()
